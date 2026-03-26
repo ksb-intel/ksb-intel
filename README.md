@@ -1,16 +1,16 @@
-## Hi there 👋
+## Hello there! 
 
-<!--
-**ksb-intel/ksb-intel** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+### I'm ksb-intel. Passionate about keeping people safe online. 
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+
+
+
+
+Check out some of my projects here:
+
+threat-tech-toolkit: My coding and technical repo. Here you can see where I'm building things and all those juicy details. Right now, its basically empty but hey we move.
+
+TBD
+
+TBD
