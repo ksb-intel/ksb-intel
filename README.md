@@ -1,15 +1,16 @@
-## Hello there! 
+ # Hello there! 
+
+<br>
+
+ I'm ksb-intel. 
 
 
-### I'm ksb-intel. Passionate about keeping people safe online. 
+ <br> 
 
 
+ Check out some of my projects here:
 
-
-
-Check out some of my projects here:
-
-threat-tech-toolkit: My coding and technical repo. Here you can see where I'm building things and all those juicy details. Right now, its basically empty but hey we move.
+threat-tech-toolkit: My coding and technical repo.
 
 TBD
 
