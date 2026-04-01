@@ -2,16 +2,18 @@
 
 <br>
 
- I'm ksb-intel. 
+ I'm Katie. 
 
 
  <br> 
 
 
- Check out some of my projects here: 
+ Check out some of my code, labs, and projects here: 
  
 [threat-tech-toolkit](https://github.com/ksb-intel/threat-tech-toolkit): My coding and technical repo.
 
-TBD
+lab-writeups
 
-TBD
+threat-reports
+
+homelab-documentation
