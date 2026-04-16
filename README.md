@@ -10,7 +10,7 @@ I use this space to document my technical growth, from automating workflows to b
  
 [Threat-Tech-Toolkit](https://github.com/ksb-intel/threat-tech-toolkit): My coding and technical repo.
 
-100-Days-of-Python: Daily Python practice to solidfy my learning.
+100-Days-of-Python: Daily Python practice to solidify my learning. 
 
 Analytical-Writeups TBD
 
