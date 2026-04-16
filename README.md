@@ -19,14 +19,13 @@ homelab-documentation TBD
 <br>
 
 ## 📈 Currently Learning
-Studying right now: CompTIA A+ (for IT fundamentals), Python
+Studying right now: Security+, Networking, and Python
 
 Focus Areas: Open-Source Intelligence (OSINT), Geopolitics, Violent Extremist Groups, Cyber Threats, and Python Automation. 
 
 ## ⚡ Fun Facts
-Hardware: Recently moved from console gaming to building my own PC.
 
-Morrowind Modding: I LOVE Morrowind, and even more than that, I love modding it. I'm basically a walking encyclopedia on the game haha.
+Morrowind Modding: I LOVE Morrowind, and even more than that, I love modding it. I'm basically a walking encyclopedia on the game 
 
 ## 📫 Connect with Me
 LinkedIn: WIP
