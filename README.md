@@ -8,20 +8,18 @@ I’m a Trust & Safety professional transitioning into the world of Cybersecurit
 ## 🛠️ Techn & Projects
 I use this space to document my technical growth, from automating workflows to breaking down complex threats.
  
-[threat-tech-toolkit](https://github.com/ksb-intel/threat-tech-toolkit): My coding and technical repo.
+[Threat-Tech-Toolkit](https://github.com/ksb-intel/threat-tech-toolkit): My coding and technical repo.
 
-lab-writeups TBD
+100-Days-of-Python: Daily Python practice to solidfy my learning.
 
-threat-reports TBD
+Analytical-Writeups TBD
 
-homelab-documentation TBD
+Home-Lab-Documentation TBD
 
 <br>
 
 ## 📈 Currently Learning
-Studying right now: Security+, Networking, and Python
-
-Focus Areas: Open-Source Intelligence (OSINT), Geopolitics, Violent Extremist Groups, Cyber Threats, and Python Automation. 
+Studying right now: CompTIA Security+, Network Fundamentals, and Python for Automation and Cybersecurity. 
 
 ## ⚡ Fun Facts
 
