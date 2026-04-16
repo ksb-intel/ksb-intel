@@ -5,7 +5,7 @@ I’m a Trust & Safety professional transitioning into the world of Cybersecurit
  <br> 
 
 
-## 🛠️ Techn & Projects
+## 🛠️ Tools and Projects
 I use this space to document my technical growth, from automating workflows to breaking down complex threats.
  
 [Threat-Tech-Toolkit](https://github.com/ksb-intel/threat-tech-toolkit): My coding and technical repo.
