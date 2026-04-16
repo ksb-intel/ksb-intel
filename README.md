@@ -41,7 +41,7 @@ Morrowind Modding: I LOVE Morrowind, and even more than that, I love modding it.
 <br>
 
 ## 📫 Connect with Me
-LinkedIn: WIP
+LinkedIn: [https://www.linkedin.com/feed/](https://www.linkedin.com/in/katie-betschart-56bb23243/)
 
 Portfolio: Website TBD
 
