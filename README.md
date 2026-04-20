@@ -9,11 +9,10 @@ Studying right now: CompTIA Security+, Network Fundamentals, and Python for Auto
 <br>
 
 ## 🛠️ Tools and Projects
-I use this space to document my technical growth, from automating workflows to breaking down complex threats.
+I use this space to document my technical growth, from automation in Python, Hands on labs, and write ups.
  
-### [Threat-Tech-Toolkit](https://github.com/ksb-intel/threat-tech-toolkit)
+### [Python-Script-Toolkit](https://github.com/ksb-intel/threat-tech-toolkit)
 
-My coding and technical repo.
 
 <br>
 
@@ -22,7 +21,7 @@ My coding and technical repo.
 
 <br>
 
-### Analytical-Writeups 
+### Specific Labs
 
 TBD
 
@@ -34,14 +33,5 @@ TBD
 
 <br>
 
-## ⚡ Fun Facts
-
-Morrowind Modding: I LOVE Morrowind, and even more than that, I love modding it. I'm basically a walking encyclopedia on the game 
-
-<br>
-
 ## 📫 Connect with Me
 LinkedIn: [https://www.linkedin.com/feed/](https://www.linkedin.com/in/katie-betschart-56bb23243/)
-
-Portfolio: Website TBD
-
