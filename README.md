@@ -11,7 +11,7 @@ Studying right now: CompTIA Security+, Network Fundamentals, and Python for Auto
 ## 🛠️ Tools and Projects
 I use this space to document my technical growth, from automation in Python, Hands on labs, and write ups.
  
-### [Python-CLI-Scrpits](https://github.com/ksb-intel/threat-tech-toolkit)
+### [Python-CLI-Scripts](https://github.com/ksb-intel/threat-tech-toolkit)
 
 
 <br>
