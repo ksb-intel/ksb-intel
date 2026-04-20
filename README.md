@@ -19,19 +19,6 @@ I use this space to document my technical growth, from automation in Python, Han
 ### [](url)[100-Days-of-Python](https://github.com/ksb-intel/100-Days-of-Python)
  Daily Python practice to solidify my learning. 
 
-<br>
-
-### Specific Labs
-
-TBD
-
-<br>
-
-### Home-Lab-Documentation 
-
-TBD
-
-<br>
 
 ## 📫 Connect with Me
 LinkedIn: [https://www.linkedin.com/feed/](https://www.linkedin.com/in/katie-betschart-56bb23243/)
