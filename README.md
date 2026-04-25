@@ -20,7 +20,7 @@ Studying right now: CompTIA Security+, Network Fundamentals, and Python for Auto
 - Python Scripts intended for use in automating workflows, creating small programs, and OSINT (Open Source Intelligence) tools. 
 
 ### [](url)[100-Days-of-Python](https://github.com/ksb-intel/100-Days-of-Python)
- - Daily Python practice to solidify my learning. 
+ - Daily Python practice for learning purposes.
 
 
 ## 📫 Connect with Me
