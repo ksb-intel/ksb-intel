@@ -9,14 +9,18 @@ Studying right now: CompTIA Security+, Network Fundamentals, and Python for Auto
 <br>
 
 ## 🛠️ My Repositories
+
+### [Wireshark-Capture-Lab](https://github.com/ksb-intel/Wireshark-Capture-Lab)
+- This project captures and analyzes PCAPs (network packet capture files) using Wireshark on Windows 11. The goal of the project is to capture live key network protocols and demonstrate packet analysis using the Wireshark display filters.
+
+
+
  
 ### [Python-CLI-Scripts](https://github.com/ksb-intel/threat-tech-toolkit)
-
-
-<br>
+- Python Scripts intended for use in automating workflows, creating small programs, and OSINT (Open Source Intelligence) tools. 
 
 ### [](url)[100-Days-of-Python](https://github.com/ksb-intel/100-Days-of-Python)
- Daily Python practice to solidify my learning. 
+ - Daily Python practice to solidify my learning. 
 
 
 ## 📫 Connect with Me
