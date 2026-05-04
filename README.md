@@ -1,6 +1,6 @@
 # Hi! I'm Katie
 
-I’m a Trust & Safety professional learning more about Cybersecurity and Threat Intelligence. I’m currently learning Python for automation, expanding my knowledge in OSINT, building out my home lab, and documenting my journey toward the CompTIA Security+
+I’m a Trust & Safety professional learning more about Cybersecurity and Threat Intelligence. I’m currently learning Python for automation, expanding my knowledge in OSINT, cybersecurity, and intelligence, and documenting my journey toward the CompTIA Security+
 <br>
 
 
