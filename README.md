@@ -9,6 +9,9 @@ I’m a Trust & Safety professional learning more about Cybersecurity and Threat
 ### [Wireshark-Capture-Lab](https://github.com/ksb-intel/Wireshark-Capture-Lab)
 - This project captures and analyzes PCAPs (network packet capture files) using Wireshark on Windows 11. The goal of the project is to capture live key network protocols and demonstrate packet analysis using the Wireshark display filters.
 
+### [Searchlight-IMINT-Lab](https://github.com/ksb-intel/Searchlight-IMINT-Lab)
+- This hands-on IMINT/GEOINT lab follows the TryHackMe Searchlight room. Covers image geolocation, reverse image search techniques, and visual intelligence methodology using open-source tools.
+
 ### [Google-Dorking-Lab](https://github.com/ksb-intel/Google-Dorking-Lab)
 - A hands-on Google dorking exercise simulating passive OSINT reconnaissance conducted against the publicly indexed digital footprint of the University of California, Los Angeles. 
  
