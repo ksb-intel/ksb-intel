@@ -79,6 +79,11 @@ def render_dashboard(
     if keyword_hits:
         stat_parts.append(f"  |  [bold green]{len(keyword_hits)} keyword matches[/bold green]")
 
+    mitre_hits = [i for i in items if i.mitre_techniques]
+    if mitre_hits:
+        unique_techs = {t.split()[0] for i in mitre_hits for t in i.mitre_techniques}
+        stat_parts.append(f"  |  [bold cyan]{len(unique_techs)} ATT&CK techniques[/bold cyan]")
+
     console.print()
     console.print(Panel(
         "  ".join(stat_parts),
@@ -107,6 +112,7 @@ def render_dashboard(
         table.add_column("SEV", width=9, no_wrap=True)
         table.add_column("Title", ratio=3)
         table.add_column("Summary", ratio=4)
+        table.add_column("ATT&CK", width=14, no_wrap=False)
         table.add_column("Published", width=17, no_wrap=True)
 
         for item in source_items:
@@ -121,10 +127,18 @@ def render_dashboard(
                 url_text = Text(f"\n{item.url[:80]}", style="dim underline blue")
                 title_text.append_text(url_text)
 
+            # Compact ATT&CK column: just technique IDs (e.g. "T1566\nT1486")
+            mitre_text = Text(
+                "\n".join(t.split()[0] for t in item.mitre_techniques),
+                style="bold cyan",
+                overflow="fold",
+            )
+
             table.add_row(
                 _sev_badge(item.severity),
                 title_text,
                 summary_text,
+                mitre_text,
                 _fmt_date(item.published, "%m-%d %H:%M"),
             )
 
@@ -154,6 +168,7 @@ def to_json(items: list[FeedItem], indent: int = 2) -> str:
             "severity": i.severity,
             "matched_keywords": i.matched_keywords,
             "ioc": i.ioc,
+            "mitre_techniques": i.mitre_techniques,
         })
     return json.dumps(records, default=_serial, indent=indent)
 
@@ -162,7 +177,7 @@ def to_csv(items: list[FeedItem]) -> str:
     buf = io.StringIO()
     writer = csv.DictWriter(buf, fieldnames=[
         "source", "severity", "title", "summary", "url",
-        "published", "tags", "matched_keywords", "ioc",
+        "published", "tags", "matched_keywords", "ioc", "mitre_techniques",
     ])
     writer.writeheader()
     for i in items:
@@ -176,6 +191,7 @@ def to_csv(items: list[FeedItem]) -> str:
             "tags": "|".join(i.tags),
             "matched_keywords": "|".join(i.matched_keywords),
             "ioc": i.ioc or "",
+            "mitre_techniques": "|".join(i.mitre_techniques),
         })
     return buf.getvalue()
 
@@ -194,9 +210,13 @@ def to_markdown(items: list[FeedItem], date_fmt: str = "%Y-%m-%d %H:%M UTC") -> 
             lines += [f"## {current_source}", ""]
         kw_badge = f" `{'` `'.join(item.matched_keywords)}`" if item.matched_keywords else ""
         date_str = _fmt_date(item.published, date_fmt)
+        mitre_line = ""
+        if item.mitre_techniques:
+            ids = " · ".join(t.split()[0] for t in item.mitre_techniques)
+            mitre_line = f"  **ATT&CK:** {ids}"
         lines += [
             f"### [{item.title}]({item.url})",
-            f"**Severity:** `{item.severity}`  **Published:** {date_str}{kw_badge}",
+            f"**Severity:** `{item.severity}`  **Published:** {date_str}{kw_badge}{mitre_line}",
             "",
             item.summary,
             "",

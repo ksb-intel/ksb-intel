@@ -13,4 +13,5 @@ class FeedItem:
     tags: list[str] = field(default_factory=list)
     severity: str = "info"   # critical | high | medium | low | info
     matched_keywords: list[str] = field(default_factory=list)
-    ioc: Optional[str] = None   # raw IOC value when relevant
+    ioc: Optional[str] = None          # raw IOC value when relevant
+    mitre_techniques: list[str] = field(default_factory=list)  # "T1566 Phishing [Initial Access]"

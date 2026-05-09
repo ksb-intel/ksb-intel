@@ -3,13 +3,16 @@
 Threat Feed Aggregator — CLI entry point.
 
 Usage:
-    python main.py                        # Run with config.yaml defaults
-    python main.py --keywords "RCE,CVE"  # Override keywords (comma-separated)
-    python main.py --sources cisa,rss    # Only specific source groups
-    python main.py --strict              # Hide items with no keyword match
-    python main.py --output feed.json    # Save output to file
-    python main.py --format json         # Output format: table|json|csv|markdown
-    python main.py --iocs-only           # Print raw IOC list to stdout
+    python main.py                          # Run with config.yaml defaults
+    python main.py --keywords "RCE,CVE"    # Override keywords (comma-separated)
+    python main.py --sources cisa,rss      # Only specific source groups
+    python main.py --strict                # Hide items with no keyword match
+    python main.py --since "2 days ago"    # Only items newer than this date
+    python main.py --since 2024-01-14      # ISO date cutoff
+    python main.py --since 12h             # Last 12 hours
+    python main.py --output feed.json      # Save output to file
+    python main.py --format json           # Output format: table|json|csv|markdown
+    python main.py --iocs-only             # Print raw IOC list to stdout
 """
 
 import logging
@@ -22,7 +25,8 @@ import click
 import yaml
 
 from aggregator import feeds as src
-from aggregator.filter import apply_keywords, escalate_severity, sort_items
+from aggregator.filter import apply_keywords, escalate_severity, sort_items, apply_since_filter, parse_since
+from aggregator.mitre import tag_mitre
 from aggregator.display import console, render_dashboard, to_json, to_csv, to_markdown
 from aggregator.models import FeedItem
 
@@ -98,10 +102,14 @@ def _collect_feeds(cfg: dict, source_filter: list[str] | None) -> list[FeedItem]
 @click.option("--format", "fmt", default="",
               type=click.Choice(["table", "json", "csv", "markdown"], case_sensitive=False),
               help="Output format (default from config)")
+@click.option("--since", "since_str", default="",
+              help='Only show items published after this point. '
+                   'Accepts: "2 days ago", "12h", "1w", "yesterday", '
+                   'or ISO date "2024-01-14".')
 @click.option("--iocs-only", is_flag=True, default=False,
               help="Print raw IOC values only, one per line")
 @click.option("--verbose", "-v", is_flag=True, default=False)
-def main(config_path, keywords, sources, strict, output_path, fmt, iocs_only, verbose):
+def main(config_path, keywords, sources, strict, since_str, output_path, fmt, iocs_only, verbose):
     """Threat Feed Aggregator — one dashboard for all your intel sources."""
     logging.basicConfig(
         level=logging.DEBUG if verbose else logging.WARNING,
@@ -129,9 +137,22 @@ def main(config_path, keywords, sources, strict, output_path, fmt, iocs_only, ve
     # ── Fetch ─────────────────────────────────────────────────────────────────
     raw_items = _collect_feeds(cfg, source_filter)
 
+    # ── Parse --since ─────────────────────────────────────────────────────────
+    since_dt = None
+    if since_str:
+        try:
+            since_dt = parse_since(since_str)
+            console.print(f"  [dim]Filtering: published ≥ {since_dt.strftime('%Y-%m-%d %H:%M UTC')}[/dim]")
+        except Exception as exc:
+            console.print(f"[red]Cannot parse --since value '{since_str}': {exc}[/red]")
+            sys.exit(1)
+
     # ── Filter & sort ─────────────────────────────────────────────────────────
     items = apply_keywords(raw_items, kw_list, strict=strict_mode)
+    if since_dt:
+        items = apply_since_filter(items, since_dt)
     items = escalate_severity(items)
+    items = tag_mitre(items)
     items = sort_items(items)
 
     # ── IOC-only mode ─────────────────────────────────────────────────────────
