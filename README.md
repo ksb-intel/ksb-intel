@@ -1,7 +1,5 @@
 I’m a Trust & Safety professional passoniate about cybersecurity, threat intelligence, and OSINT. 
 
-<br>
-
 ## My Repositories
 
 ### [Wireshark-Capture-Lab](https://github.com/ksb-intel/Wireshark-Capture-Lab)
