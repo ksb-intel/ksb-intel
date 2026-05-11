@@ -1,0 +1,81 @@
+# Threat Feed Aggregator Configuration
+# Edit this file to customize your sources, keywords, and display options.
+
+# ── Keyword Filters ──────────────────────────────────────────────────────────
+# Items matching ANY keyword (case-insensitive) are highlighted; items with
+# NONE of the keywords are still shown unless strict_filter is true.
+keywords:
+  - ransomware
+  - phishing
+  - zero-day
+  - CVE
+  - critical
+  - RCE
+  - remote code execution
+  - botnet
+  - malware
+  - exploit
+  - backdoor
+  - credential
+  - data breach
+  - supply chain
+  - CISA
+  - KEV
+
+# Set to true to HIDE items that do NOT match any keyword
+strict_filter: false
+
+# ── abuse.ch Sources ──────────────────────────────────────────────────────────
+abuse_ch:
+  urlhaus:
+    enabled: true
+    limit: 20          # max recent entries to fetch
+  malware_bazaar:
+    enabled: true
+    limit: 20
+  threatfox:
+    enabled: true
+    limit: 20
+
+# ── CISA ──────────────────────────────────────────────────────────────────────
+cisa:
+  enabled: true
+  # Known Exploited Vulnerabilities catalog (JSON)
+  kev_enabled: true
+  # Advisories RSS feed
+  advisories_enabled: true
+  kev_days_back: 14    # only show KEV entries added in last N days
+
+# ── RSS Feeds ─────────────────────────────────────────────────────────────────
+rss_feeds:
+  - name: "Krebs on Security"
+    url: "https://krebsonsecurity.com/feed/"
+    enabled: true
+  - name: "Bleeping Computer"
+    url: "https://www.bleepingcomputer.com/feed/"
+    enabled: true
+  - name: "The Hacker News"
+    url: "https://feeds.feedburner.com/TheHackersNews"
+    enabled: true
+  - name: "Threatpost"
+    url: "https://threatpost.com/feed/"
+    enabled: true
+  - name: "Dark Reading"
+    url: "https://www.darkreading.com/rss.xml"
+    enabled: true
+  - name: "SANS Internet Stormcast"
+    url: "https://isc.sans.edu/rssfeed_full.xml"
+    enabled: true
+
+# ── Display ───────────────────────────────────────────────────────────────────
+display:
+  max_items_per_source: 10   # cap per source in the dashboard
+  show_urls: true
+  theme: "dark"              # dark | light
+  date_format: "%Y-%m-%d %H:%M UTC"
+
+# ── Output ────────────────────────────────────────────────────────────────────
+output:
+  # Set a path to automatically save results on every run, or leave empty
+  auto_save: ""              # e.g. "~/intel/daily_feed.json"
+  default_format: "table"    # table | json | csv | markdown
